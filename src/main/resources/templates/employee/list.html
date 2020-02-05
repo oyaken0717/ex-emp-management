@@ -72,7 +72,7 @@
 					<tbody>
 						<tr th:each="member:${employeeList}">
 							<td>
-								<a th:href="@{/employee/shoeDetail?(id=${member.id})}" href="detail.html">
+								<a th:href="@{/employee/showDetail?(id=${member.id})}" href="detail.html">
 									<span th:text="${member.name}">山田太郎</span>
 								</a>
 							</td>
