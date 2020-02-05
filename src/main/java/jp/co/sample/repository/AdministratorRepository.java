@@ -1,5 +1,7 @@
 package jp.co.sample.repository;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -57,16 +59,24 @@ public class AdministratorRepository {
 	 * @return 存在しない場合null 存在する場合情報が詰まったadministrator
 	 */
 	public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
+//	パターン2 検索件数が0だったらnullにする。
 		String sql = "SELECT id,name,mail_address,password FROM " + tableName
 				+ " WHERE mail_address = :mailAddress AND password = :password";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("mailAddress", mailAddress).addValue("password",
 				password);
-
-		Administrator administrator = template.queryForObject(sql, param, ADMINISTRATOR_ROW_MAPPER);
-		if (administrator == null) {
+		
+		List<Administrator> administratorList = template.query(sql, param, ADMINISTRATOR_ROW_MAPPER);
+		if (administratorList.size()==0) {
 			return null;
-		} else {
-			return administrator;
 		}
+		return administratorList.get(0);
+		
+//		パターン1 queryForObject() > 例外がある前提 > SQLにバグがある前提
+//		try {
+//			return template.queryForObject(sql, param, ADMINISTRATOR_ROW_MAPPER);			
+//		} catch (Exception e) {
+//			return null;
+//		}
+
 	}
 }
