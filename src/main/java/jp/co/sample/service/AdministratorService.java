@@ -29,7 +29,7 @@ public class AdministratorService {
 	 * @param password パスワード
 	 * @return ログイン者の情報が入ったオブジェクト
 	 */
-	public Administrator load(String mailAddress,String password) {
+	public Administrator login(String mailAddress,String password) {
 		return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
 		
 	}
