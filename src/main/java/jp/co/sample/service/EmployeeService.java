@@ -38,7 +38,7 @@ public class EmployeeService {
 	 * @param id 従業員ID
 	 * @return 従業員情報の入ったオブジェクト
 	 */
-	public Employee showDetail(Integer id) {
+	public Employee showDetail(Integer id) {	
 		return employeeRepository.load(id);
 		
 	}
