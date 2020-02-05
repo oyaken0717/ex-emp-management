@@ -91,9 +91,14 @@ public class AdministratorController {
 	
 	@RequestMapping("/login")
 	public String login(LoginForm form,Model model) {
+		System.out.println(form);
 		Administrator administrator = administratorService.login(form.getMailAddress(), form.getPassword());
 		if (administrator==null) {
-			model.addAttribute("エラー", "メールアドレスまたはパスワードが不正です");
+			model.addAttribute("error", "メールアドレスまたはパスワードが不正です");
+			return toLogin();
+//			①html
+//			return "forward:/";
+//			return "forward:/exam1/";
 		}else {
 			session.setAttribute("administratorName", administrator);
 		}

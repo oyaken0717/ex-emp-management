@@ -21,7 +21,7 @@ import jp.co.sample.domain.Administrator;
 @Repository
 public class AdministratorRepository {
 	private static final String tableName = "administrators";
-
+	
 	@Autowired
 	private NamedParameterJdbcTemplate template;
 
@@ -29,7 +29,7 @@ public class AdministratorRepository {
 		Administrator administrator = new Administrator();
 		administrator.setId(rs.getInt("id"));
 		administrator.setName(rs.getString("name"));
-		administrator.setMailAddress(rs.getString("mailAddress"));
+		administrator.setMailAddress(rs.getString("mail_address"));
 		administrator.setPassword(rs.getString("password"));
 		return administrator;
 	};
