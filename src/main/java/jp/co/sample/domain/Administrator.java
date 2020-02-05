@@ -1,7 +1,8 @@
 package jp.co.sample.domain;
 
 /**
- * 管理者情報表すドメイン
+ * 管理者情報表すドメイン.
+ * 
  * @author oyamadakenji
  *
  */
