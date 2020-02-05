@@ -70,17 +70,17 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="member:${employeeList}">
+						<tr>
 							<td>
-								<a th:href="@{/employee/shoeDetail?(id=${member.id})}" href="detail.html">
-									<span th:text="${member.name}">山田太郎</span>
+								<a href="detail.html">
+									<span>山田太郎</span>
 								</a>
 							</td>
 							<td>
-								<span th:text="${member.hireDate}">2016/12/1</span>
+								<span>2016/12/1</span>
 							</td>
 							<td>
-								<span th:text="${member.dependentsCount}">3人</span>
+								<span>3人</span>
 							</td>
 						</tr>
 					</tbody>
