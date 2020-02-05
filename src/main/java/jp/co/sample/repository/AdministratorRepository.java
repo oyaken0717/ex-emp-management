@@ -38,25 +38,25 @@ public class AdministratorRepository {
 	/**
 	 * 管理者情報を挿入する.
 	 * 
-	 * @param administrator
+	 * @param administrator　管理者情報
 	 * 
 	 */
 	public void insert(Administrator administrator) {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(administrator);
 
 		String insertSql = "INSERT INTO " + tableName
-				+ " (name,mail_address,password) VALUES (:name,:mailAddress,password)";
+				+ " (name,mail_address,password) VALUES (:name,:mailAddress,:password)";
 
 		template.update(insertSql, param);
 	}
 
 	// ■findByMailAddressAndPassword()
 	/**
-	 * メールアドレスとパスワードから管理者情報を取得する. 存在しない場合はnullを返す
+	 * メールアドレスとパスワードから管理者情報を取得する. 存在しない場合はnullを返す.
 	 * 
-	 * @param mailAddress
-	 * @param password
-	 * @return 存在しない場合null 存在する場合情報が詰まったadministrator
+	 * @param mailAddress　メールアドレス
+	 * @param password　パスワード
+	 * @return 管理者情報　(存在しない場合null)
 	 */
 	public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
 //	パターン2 検索件数が0だったらnullにする。

@@ -46,7 +46,7 @@ public class EmployeeRepository {
 	};
 
 	/**
-	 * 従業員一覧情報を入社日順で取得する.
+	 * 従業員一覧情報を入社日順で取得する.<br>
 	 * 従業員が存在しない場合はサイズ0件の従業員一覧を返す
 	 * @return 情報の入ったemployeesテーブルの情報
 	 */

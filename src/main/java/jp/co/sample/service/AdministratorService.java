@@ -15,7 +15,7 @@ public class AdministratorService {
 	private AdministratorRepository administratorRepository;
 	
 	/**
-	 * テーブルに情報をINSERTする.
+	 * 管理者情報を挿入する.
 	 * @param administrator
 	 */
 	public void insert(Administrator administrator) {
