@@ -99,9 +99,9 @@ public class AdministratorController {
 //			①html
 //			return "forward:/";
 //			return "forward:/exam1/";
-		}else {
-			session.setAttribute("administratorName", administrator);
 		}
+		
+		session.setAttribute("administratorName", administrator);
 		return "forward:/eployee/showList";
 	}
 	
