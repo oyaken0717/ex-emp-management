@@ -25,6 +25,11 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
+	/**
+	 * 扶養人数を更新する際のリクエストパラメータが格納される.
+	 * 
+	 * @return リクエストパラメータ
+	 */
 	@ModelAttribute
 	public UpdateEmployeeForm setUpUpdateEmployeeForm() {
 		return new UpdateEmployeeForm();
@@ -43,6 +48,11 @@ public class EmployeeController {
 		return "employee/list";
 	}
 	
+	/**
+	 * @param id ID
+	 * @param model リクエストスコープ
+	 * @return 従業員詳細画面
+	 */
 	@RequestMapping("/showDetail")
 	public String showDetail(String id ,Model model) {
 		int employeeId = Integer.parseInt(id);
