@@ -55,6 +55,8 @@ public class EmployeeController {
 	 */
 	@RequestMapping("/showDetail")
 	public String showDetail(String id ,Model model) {
+//		■Srtingで受け取るのは例外が発生した時にエラー対処するため。
+//		(例：「あ」とか「い」とか)
 		int employeeId = Integer.parseInt(id);
 		model.addAttribute("employee", employeeService.showDetail(employeeId));
 		return "employee/detail";
