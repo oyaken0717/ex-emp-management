@@ -79,7 +79,7 @@ public class EmployeeRepository {
 	 */
 	public void update(Employee employee) {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(employee);
-		String updateSql = "UPDATE employees SET dependents_count = :dependentCount WHERE id = :id";
+		String updateSql = "UPDATE employees SET dependents_count = :dependentsCount WHERE id = :id";
 		template.update(updateSql, param);
 	}
 

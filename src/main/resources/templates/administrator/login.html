@@ -29,7 +29,7 @@
 <!-- ここから上を編集する必要はありません -->
 
 <!-- ここにモックのform要素を貼り付けます -->
-					<form th:action="@{/login}"method="post" action="../employee/list.html" th:object="${loginForm}">
+					<form th:action="@{/login}" method="post" action="../employee/list.html" th:object="${loginForm}">
 						<fieldset>
 							<legend>ログイン</legend>
 							<div th:unless="${error}" th:text="${error}"></div>

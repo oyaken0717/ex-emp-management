@@ -72,7 +72,9 @@ public class EmployeeController {
 	@RequestMapping("/update")
 	public String update(UpdateEmployeeForm form) {
 		Employee employee = new Employee();
-		BeanUtils.copyProperties(form, employee);
+//		BeanUtils.copyProperties(form, employee);
+		employee.setId(form.getIntId());
+		employee.setDependentsCount(form.getIntDependentsCount());
 		employeeService.update(employee);
 		return "redirect:/employee/showList";		
 		

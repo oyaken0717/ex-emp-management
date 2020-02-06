@@ -102,7 +102,8 @@ public class AdministratorController {
 		}
 		
 		session.setAttribute("administratorName", administrator);
-		return "forward:/eployee/showList";
+		System.out.println(administrator);
+		return "forward:/employee/showList";
 	}
 	
 	
